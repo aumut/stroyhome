@@ -1,0 +1,155 @@
+$rangeHeight: 4px
+$rangeBorderRadius: 7px
+$rangeThumbRadius: 1.6vw
+$rangeMobileHeight: 318px
+$rangeThumbRadiusMobile: 31px
+
+.rangecontainer
+  position: relative
+  font-family: $ffAvenirNextCyr
+  +phone-down
+    display: flex
+    justify-content: center
+    min-height: 330px
+
+input[type=range]
+  -webkit-appearance: none
+  width: 100%
+  background-color: transparent
+  +phone-down
+    transform: rotate(90deg)
+
+input[type=range]:focus
+  outline: none
+
+input[type=range]::-webkit-slider-runnable-track
+  width: 100%
+  height: $rangeHeight
+  cursor: pointer
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d
+  background: $range-bg
+  border-radius: $rangeBorderRadius
+  border: 0px solid #000101
+  //+phone-down
+    width: $rangeHeight
+    height: $rangeMobileHeight
+
+input[type=range]::-webkit-slider-thumb
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d
+  border: 0px solid #000000
+  height: $rangeThumbRadius
+  width: $rangeThumbRadius
+  border-radius: 50%
+  background: $accent
+  cursor: pointer
+  -webkit-appearance: none
+  z-index: 2
+  margin-top: -0.8vw
+  +phone-down
+    width: $rangeThumbRadiusMobile
+    height: $rangeThumbRadiusMobile
+    margin-top: calc((#{$rangeThumbRadiusMobile} - #{$rangeHeight}) / (-2))
+
+input[type=range]:focus::-webkit-slider-runnable-track
+  background: $range-bg
+
+input[type=range]::-moz-range-track
+  width: 100%
+  height: $rangeHeight
+  cursor: pointer
+  animate: 0.2s
+  background: $range-bg
+  border-radius: $rangeBorderRadius
+
+input[type=range]::-moz-range-thumb
+  height: $rangeThumbRadius
+  width: $rangeThumbRadius
+  border-radius: 50%
+  background: $accent
+  z-index: 2
+  cursor: pointer
+  +phone-down
+    width: $rangeThumbRadiusMobile
+    height: $rangeThumbRadiusMobile
+
+input[type=range]::-ms-track
+  width: 100%
+  height: $rangeHeight
+  cursor: pointer
+  animate: 0.2s
+  background: transparent
+  border-color: transparent
+  //border-width: 39px 0
+  border-width: 2.03vw 0
+  color: transparent
+
+input[type=range]::-ms-fill-lower
+  background: $range-bg
+  border-radius: $rangeBorderRadius
+
+input[type=range]::-ms-fill-upper
+  border-radius: $rangeBorderRadius
+
+input[type=range]::-ms-thumb
+  height: $rangeThumbRadius
+  width: $rangeThumbRadius
+  border-radius: 50%
+  background: $accent
+  z-index: 2
+  cursor: pointer
+  +phone-down
+    width: $rangeThumbRadiusMobile
+    height: $rangeThumbRadiusMobile
+
+input[type=range]:focus::-ms-fill-lower
+  background: $range-bg
+
+input[type=range]:focus::-ms-fill-upper
+  background: $range-bg
+
+.rangeLabel
+  position: absolute
+  top: -2.8vh //-20px
+  +phone-down
+    font-size: 18px
+    top: 7px
+  &--min
+    left: calc(-#{$rangeThumbRadius} / 2)
+    +phone-down
+      left: calc(50% - 50px)
+  &--max
+    right: -0.4375vw //-30px
+    +phone-down
+      right: unset
+      left: calc(50% - 79px)
+      bottom: -14px
+      top: unset
+  &--val
+
+
+.bubble
+  background: transparent
+  position: absolute
+  top: -5.24vh //-35px
+  left: 50%
+  font-size: 1.458vw
+  line-height: 1.21
+  transform: translateX(-50%)
+  +ipad-down
+    font-size: 1.4rem
+  +phone-down
+    font-size: 28px
+    left: 74%
+    top: 30%
+
+.range-thumb--anim
+  display: inline-block
+  width: 1.6vw
+  height: 1.6vw
+  background-color: greenyellow
+  border-radius: 50%
+  position: absolute
+  left: 14vw
+  top: -0.2vh
+  pointer-events: none
+  +phone-down

@@ -1,0 +1,265 @@
+.top
+  background:
+    image: url("../images/content/banner-bg.jpg")
+    repeat: no-repeat
+    size: cover
+    position: center
+  +phone-down
+    padding-top: 185px!important
+    background-position: 85%
+  &.fullscreen
+    overflow: hidden
+    +phone-down
+      padding-bottom: 124px
+  &-in
+    display: flex
+    flex-direction: column
+    justify-content: center
+    //height: calc(100vh - 103.438px)
+    +phone-down
+      height: auto !important
+    //+maxheight-down
+      height: auto
+
+  .container
+    position: unset
+
+  //&.stroke-ic
+    //overflow: hidden
+    &::after
+      display: none
+      bottom: calc(-100em/18)
+      right: -70px
+
+
+
+.banner
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  justify-content: center
+  flex-grow: 1
+  position: relative
+  +phone-down
+    justify-content: flex-start
+
+  &.lines-ic
+    &::after
+      bottom: -10%
+      right: -18%
+      +ipad-down
+        display: none
+
+  //&::after
+    content: ''
+    display: inline-block
+    width: 30vw //574px
+    height: 53vh //574px
+    position: absolute
+    background:
+      image: url("../images/icons/lines.svg")
+    +ipad-down
+      display: none
+  //&::after
+    bottom: -10%
+    right: -18%
+
+  .progress
+    display: flex
+    //margin-bottom: 4.63vh
+    margin-bottom: 4.9vh //53px
+    +phone-down
+      margin-bottom: 90px
+      //margin-bottom: 9vh
+    &-item
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-right: calc(20em/18)
+      padding: 0 calc(25em/18)
+      text-align: center
+      +phone-down
+        padding: 0 21px
+      &:last-child
+        margin-right: 0
+    &-count
+      text-transform: uppercase
+      color: $accent
+      font-family: $ffNeumann
+      font-size: 1.35vw //26
+      line-height: 1.46
+      +ipad-down
+        font-size: 1.3rem
+      +phone-down
+        font-size: 17px
+
+    &-title, &-subtitle
+      font-size: 0.52vw //10
+      line-height: 1.2
+      +ipad-down
+        font-size: 0.5rem
+      +phone-down
+        font-size: 7px //calc(7em/12)
+        line-height: 1.28
+
+    &-title
+      font-family: $ffAvenirNextCyrBold
+
+  .title
+    margin-bottom: 10px
+    margin-bottom: 0.925vh
+
+    +phone-down
+      text-align: center
+      margin-bottom: 20px
+      font-size: 28px //calc(28em/12)
+
+  .subtitle
+    width: 33.85vw
+    margin-bottom: 35px
+    margin-bottom: 2.78vh //30
+    //+large-down
+      width: 43.96vw
+    //+laptop-down
+      width: 51.1vw
+    //+ipad-down
+      width: 52.3vw
+    +phone-down
+      text-align: center
+      width: 100%
+      margin-bottom: 70px
+      font-size: 12px
+
+  &-main
+    width: 56.97vw
+    margin-top: -9.4vh
+    //@media screen and (max-width: 1808px) and (min-width: 1400px) and (max-height: 800px)
+      width: 86.4vw
+    //+large-down
+      width: 74vw
+    //+large-down
+      width: 86vw
+    //+ipad-down
+      width: 88vw
+    +phone-down
+      width: 100%
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-top: 0
+
+  .btn-round
+    margin-right: 1.15vw //22
+  .btn-play
+    display: flex
+    align-items: center
+    align-self: flex-end
+    //bottom: -80px
+    //bottom: -8.4%
+    position: absolute
+    bottom: 1.296vh
+    cursor: pointer
+    z-index: 1
+    +phone-down
+      display: none
+  .btn-light
+    +phone-down
+      width: 80%
+      margin-bottom: 5px
+  .btn-btm
+    height: 15.625vw
+    bottom: calc(1.296vh - 1.98vw)
+
+.laurel-ic
+  position: relative
+  &::before, &::after
+    content: ""
+    display: inline-block
+    top: 0.65vh //7
+    left: 0
+    width: 2.7vw //52
+    height: 3.75vw //72
+    position: absolute
+    background:
+      color: transparent
+      repeat: no-repeat
+      size: cover
+      position: center
+      image: url("../images/icons/laurel.svg")
+    +phone-down
+      width: 4.22rem //calc(38em/12)
+      height: 5.88rem //calc(53em/12)
+      top: 0.78rem //calc(7em/12)
+  &::after
+    left: unset
+    right: 0
+    transform: scaleX(-1)
+
+
+
+.btn-play
+  font-family: $ffNeumann
+  font-size: 1.35vw //26
+  line-height: 1.46
+  text-align: center
+  text-transform: uppercase
+  color: $accent
+  +ipad-down
+    font-size: 1.3rem
+
+  &__text
+    margin-left: -4.0625vw
+
+$btn_round_w: 5.1vw
+.btn-round
+  //display: inline-block
+  width: $btn_round_w //98
+  height: $btn_round_w //98
+  border-radius: 50%
+  box-shadow: 0 0 5.2vw $accent //100
+  background-color: $accent
+  display: inline-flex
+  justify-content: center
+  align-items: center
+
+.btn-play-ic
+  width: 100%
+  height: 100%
+  border-radius: 50%
+  background:
+    //color: $accent
+    image: url("../images/icons/play.svg")
+    repeat: no-repeat
+    size: 24%
+    position: center
+
+
+.contact-phone-btn
+  svg
+    width: 6.25vw //120px
+    height: 6.25vw //120px
+    top: -2.083vw //-40px
+    left: -1.927083vw //-37px
+    +phone-down
+      width: 100px
+      height: 100px
+      top: -4.083vw
+      left: -3.927083vw
+
+
+  circle.circle
+    cx: 1.5625vw //30px
+    cy: 1.5625vw //30px
+    r: 6.25vw //120px
+    +phone-down
+      cx: 0
+      cy: 0
+      r: 100px
+
+
+
+.modal-wrap
+  .contact-phone-btn
+    svg
+      top: -1.5625vw //-30px
+      left: -1.40625vw //-27px

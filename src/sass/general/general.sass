@@ -1,0 +1,721 @@
+*
+	box-sizing: border-box
+	&:focus, &:active
+		outline: none !important
+
+@viewport
+	width: device-width
+
+html
+	scroll-behavior: smooth
+	//overflow: hidden
+	font-size: 10px
+	+tablet-down
+		font-size: 7px
+
+
+body
+	font:
+		family: $ffNeumann
+		size: .9375vw
+		weight: 400
+	color: $fontColorMain
+	line-height: $lineHeight_body
+	min-width: $phone-width-min
+	margin: 0
+	padding: 0
+	height: 100vh
+	background-color: $bg-dark
+	font-family: $ffAvenirNextCyr
+	position: relative
+	//+laptop-down
+		font-size: 15px
+	//+ipad-down
+		font-size: 14px
+	//+tablet-down
+		font-size: 12px
+	//+phone-down
+		font-size: 12px
+	&.stroke-ic
+		overflow: hidden
+		&::after
+			bottom: -5.2vw
+			right: -70px
+
+h1, h2, h3, h4, h5, h6, p, ul, ol
+	margin: 0px
+	padding: 0px
+
+h1
+	font-size: $fontSize_h1
+	line-height: $lineHeight_h1
+	font-weight: normal
+	text-transform: uppercase
+	+ipad-down
+		font-size: $fontSize_h1_ipad
+
+h2
+	font-size: $fontSize_h2
+	line-height: $lineHeight_h2
+	font-weight: 400
+	text-transform: uppercase
+	+ipad-down
+		font-size: $fontSize_h2_ipad
+
+h3
+	font-size: $fontSize_h3
+	line-height: $lineHeight_h3
+	+ipad-down
+		font-size: $fontSize_h3_ipad
+
+h4
+	font-size: $fontSize_h4
+	line-height: $lineHeight_h4
+	+ipad-down
+		font-size: $fontSize_h4_ipad
+
+h5
+	font-size: $fontSize_h5
+	line-height: $lineHeight_h5
+	+ipad-down
+		font-size: $fontSize_h5_ipad
+a
+	text-decoration: none
+
+.container
+	max-width: 85.9vw
+	width: 100%
+	padding: 0 $pd_cont
+	margin: 0 auto
+	position: relative
+
+	+phone-down
+		max-width: 100vw
+
+.fullscreen
+	.container
+		height: 100%
+		+ipad-down
+			height: auto
+
+.bg-white
+	background-color: $bg-white
+
+.title
+	color: $fontColorMain
+	font-family: $ffNeumann
+
+.text-bold
+	font-family: $ffAvenirNextCyrBold
+
+.text-upper
+	text-transform: uppercase
+
+//.logo
+	display: inline-block
+	//width: 17.447916vw
+	//max-width: 17.447916vw
+	width: 8.854vw
+	min-width: 8.854vw
+	+ipad-down
+		width: 100px
+		min-width: 100px
+	+phone-down
+		width: 122px
+	img
+		width: 100%
+		height: auto
+
+	&-text
+		font-size: 0.73vw //14px
+		line-height: 1.2
+		display: inline-flex
+		+ipad-down
+			font-size: 0.7rem //7px
+
+.btn
+	position: relative
+	font-family: $ffAvenirNextCyr
+	font-size: 0.9375vw //18
+	line-height: $lineHeight_body
+	text-decoration: none
+	-webkit-appearance: none
+	border: 0
+	cursor: pointer
+	+ipad-down
+		font-size: 0.9rem
+
+	//&:hover
+		color: inherit
+
+	&-light
+		padding: 1.25vw 2.4vw //24 46
+		background: $accent
+		box-shadow: 0px 4px 0px #655747, 0px 0px 3.33vw rgba(187, 161, 130, 0.4)
+		border-radius: 10rem //5.2vw //100
+		color: $btn-col
+		transition: all .4s
+		overflow: hidden
+		&:hover
+			background-color: $btn-hover-col
+			color: $btn-col
+		&:active, &:focus
+			box-shadow: none
+		+phone-down
+			font-size: 16px
+			padding-top: 20px
+			padding-bottom: 20px
+
+	&-dark
+		background-color: $block-bg
+		border: 1px solid $field-brd
+		color: #ffffff
+		border-radius: calc(100em/18)
+
+
+.btn-anim
+	will-change: transform
+	&:not(:disabled):before
+		margin-left: calc(-30em/18)
+		content: " "
+		width: calc(30em/18)
+		height: calc(300em/18)
+		background: rgba(255, 255, 255, 0.3)
+		position: absolute
+		left: calc(-40em/18)
+		top: calc(-150em/18)
+		top-animation-timing-function: ease-in-out
+		transition: all .1s
+		animation-name: slideme
+		animation-duration: 3.5s
+		animation-iteration-count: infinite
+		transform: rotate(30deg)
+
+	&:after
+		margin-left: calc(-30em/18)
+		content: " "
+		width: calc(30em/18)
+		height: calc(300em/18)
+		background: rgba(255, 255, 255, 0.3)
+		animation-delay: .05s
+		position: absolute
+		left: calc(-90em/18)
+		top: calc(-150em/18)
+		top-animation-timing-function: ease-in-out
+		transition: all .1s
+		animation-name: slideme
+		animation-duration: 3.5s
+		animation-iteration-count: infinite
+		transform: rotate(30deg)
+
+.section-index-wrapper
+	position: absolute
+	right: -1.2vw //-24px
+	top: calc(50% - 21.92vh)
+	+phone-down
+		display: none
+
+.section-index
+	display: inline-block
+	width: 0.104vw
+	height: 20.92vh
+	background: linear-gradient(transparent, $accent)
+	position: relative
+	&::before
+		content: ''
+		display: inline-block
+		width: 0.3125vw //6px
+		height: 0.3125vw  //6px
+		border-radius: 50%
+		background-color: $accent
+		box-shadow: 0px 0px 0.88vw $accent //17px
+		position: absolute
+		bottom: -0.555vh //-6px
+		left: -0.104vw //-2px
+	&::after
+		content: attr(data-index)
+		color: $accent
+		font-size: 0.729vw //14px
+		line-height: 1.225
+		font-weight: bold
+		text-align: center
+		font-family: $ffAvenirNextCyr
+		position: absolute
+		bottom: -3.4vh //-25px
+		left: -0.35vw //-5px
+		+ipad-down
+			font-size: 0.7rem
+	&--dark
+		background: linear-gradient(transparent, $dark)
+		&::before
+			background-color: $dark
+			box-shadow: 0px 0px 0.88vw $dark //17px
+		&::after
+			color: $dark
+
+.ic
+	position: relative
+	&::before
+		content: ""
+		display: inline-block
+		position: absolute
+		top: 0
+		left: 0
+		background:
+			color: transparent
+			repeat: no-repeat
+			size: cover
+			position: center
+
+.accent
+	color: $accent
+
+.fixed
+	position: fixed
+	&.callback
+		//bottom: 10.65vh //115
+		bottom: calc(50% + 18.3vw / (-2))
+		right: 2.08vw
+		z-index: 4
+
+.callback
+	list-style: none
+	display: flex
+	flex-direction: column
+	+phone-down
+		display: none
+	&__item
+		display: inline-flex
+		align-items: center
+		margin-bottom: 0.96vh //calc(30em/18)  10
+	&__btn
+		display: inline-block
+		width: $callback-btn-w
+		height: $callback-btn-w
+		background-color: $fontColorMain
+		border-radius: 50%
+		padding: calc(15em/18)
+		//opacity: 0
+		transition: all .5s ease
+		box-shadow: none
+		.svg-sym
+			fill: $dark
+			transition: all .5s ease
+		//&:hover
+			background: $accent
+			box-shadow: 0px 0px 17px $accent
+			.svg-sym
+				fill: #fff
+		+phone-down
+			width: $callback-btn-w_ph
+			height: $callback-btn-w_ph
+			padding: 10px
+
+	.prompt
+		display: inline-block
+		//padding: calc(23em/14) calc(60em/14) calc(23em/14) calc(20em/14)
+		padding: 1.19vw 3.125vw 1.19vw 1.04vw
+		font-family: $ffMontserrat
+		font-size: 0.729vw //calc(14em/18)
+		line-height: 1.2
+		text-transform: uppercase
+		color: $fontColorMain
+		width: calc(195em/14)
+		background: transparent
+		box-shadow: 0px 0px 1.56vw rgba(0, 0, 0, 0.35) //30
+		border-radius: 1.04vw //calc(20em/14)
+		margin-right: calc(#{$callback-btn-w} / (-2))
+		z-index: 1
+		opacity: 0
+		transition: all .8s ease-out
+		+ipad-down
+			font-size: 0.7rem
+		+phone-down
+			font-size: 1rem
+			padding: calc(23em/14) calc(60em/14) calc(23em/14) calc(20em/14)
+			border-radius: 20px
+			margin-right: calc(11.125vw / (-2))
+
+	&__item
+		&:hover
+			.prompt
+				opacity: 1
+				background: $block-bg_prompt
+				z-index: -1
+			.callback__btn
+				background: $accent
+				box-shadow: 0px 0px 0.88vw $accent //17
+				.svg-sym
+					fill: #fff
+
+
+svg.svg-wrap
+	width: 100%
+	height: 100%
+
+svg.svg-ic path
+	fill: inherit
+
+
+.form
+	width: 100%
+
+.form-field
+	width: 100%
+	background: transparent
+	//box-shadow: 0px calc(15em/18) calc(50em/18) rgba(0, 0, 0, 0.1)
+	border-radius: 5.6rem //calc(56em/18)
+	font-size: 0.9375vw //18
+	line-height: 1.2
+	text-transform: uppercase
+	text-align: center
+	padding: 1.25vw //24
+	border: 1px solid $field-brd
+	+ipad-down
+		font-size: 16px
+	&.error
+		border-color: red
+	+phone-down
+		padding: 19px
+
+
+.form-row
+	margin-bottom: 1.85vh  //calc(20em/18)
+	&:last-child
+		margin-bottom: 0
+
+.form-check-wrap
+	display: flex
+	justify-content: center
+	+phone-down
+		justify-content: flex-start
+
+.form-check
+	font-size: 0.625vw  //calc(12em/18)
+	line-height: 1.225
+	display: flex
+	width: 67%
+	border: 1px solid transparent
+	+ipad-down
+		font-size: 0.6rem
+	+phone-down
+		font-size: 12px
+		width: 100%
+	&.error
+		border-color: red
+	&__btn
+		display: inline-block
+		margin-right: calc(8em/12)
+		&::before
+			content: ""
+			display: inline-block
+			min-width: 0.93vw //calc(17.8em/12)
+			width: 0.93vw //calc(17.8em/12)
+			min-height: 0.83vw //calc(16em/12)
+			height: 0.83vw //calc(16em/12)
+			border-radius: 0.15vw //3px
+			transition: all .3s ease-in
+			background:
+				color: $accent
+				image: none
+				repeat: no-repeat
+				size: 0
+				position: center
+			+phone-down
+				min-width: 17.8px //calc(17.8em/12)
+				width: 17.8px //calc(17.8em/12)
+				min-height: 16px //calc(16em/12)
+				height: 16px //calc(16em/12)
+				border-radius: 3px
+
+	input[type="checkbox"]
+		display: none
+	input[type="checkbox"]:checked + .form-check__btn::before
+		background-image: url("../images/icons/check.svg")
+		background-size: 0.52vw 0.42vw
+		+ipad-down
+			background-size: 1.52vw 0.42vw
+		+phone-down
+			background-size: 50%
+
+
+.link
+	color: inherit
+	border-bottom: 1px solid $dark
+
+.btn-close
+	display: inline-flex
+	position: absolute
+	right: 2.08vw //calc(40em/18)
+	top: 1.5625vw //calc(30em/18)
+	width: 1.66vw //calc(32em/18)
+	min-width: 1.66vw //calc(32em/18)
+	height: 1.66vw //calc(32em/18)
+	min-height: 1.66vw //calc(32em/18)
+	background:
+		color: transparent
+		image: url("../images/icons/close.svg")
+		repeat: no-repeat
+		size: cover
+		position: center
+	+phone-down
+		width: 16px
+		min-width: 16px
+		height: 16px
+		min-height: 16px
+		top: 30px
+		right: 30px
+
+
+.btn-btm
+	display: inline-flex
+	align-items: center
+	font-size: 0.9375vw  //1em
+	position: absolute
+	bottom: 13vh
+	left: 0
+	color: $fontColorMain
+	cursor: pointer
+	+ipad-down
+		font-size: .9rem
+	//+large-down
+		bottom: calc(4em/18)
+	//+laptop-down
+		bottom: calc(18em/15)
+	//+tablet-down
+		position: static
+	+phone-down
+		display: none
+	//+maxheight700-down
+		position: static
+		margin-top: 2em
+	.svg-sym
+		fill: $fontColorMain
+
+.mouse-ic
+	display: inline-block
+	min-width: calc(22em/18)
+	min-height: calc(22em/18)
+	width: calc(22em/18)
+	height: calc(22em/18)
+	margin-right: calc(10em/18)
+
+.btn-btm
+	.mouse-ic-btn
+		animation: mouse 1.3s ease-in-out infinite
+
+
+//.stroke-ic
+	position: relative
+	&::after
+		content: ""
+		display: inline-block
+		width: calc(574em/18)
+		height: calc(574em/18)
+		position: absolute
+		bottom: 0
+		right: 0
+		transform: rotate(-75deg)
+		z-index: 1
+		background:
+			color: rebeccapurple
+			image: url("../images/content/strokes.png")
+			repeat: no-repeat
+			size: contain
+			position: center
+
+.br-btm
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+
+.contact
+	display: inline-flex
+	align-items: center
+	font-size: 0.88vw //calc(17rem/18)
+	line-height: 1.2
+	color: $fontColorMain
+	font-family: $ffAvenirNextCyrBold
+	position: relative
+	+ipad-down
+		font-size: 0.85rem
+	+phone-down
+		font-size: 17px
+	&-ic
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		width: 22px
+		height: 22px
+		margin-right: 10px
+		.svg-sym
+			fill: $accent
+	&__text
+		position: absolute
+		top: -1.38vh
+		left: 50%
+		font-family: $ffAvenirNextCyr
+		font-size: 0.625vw //12
+		line-height: 1.25
+		+ipad-down
+			font-size: .6rem
+		+phone-down
+			font-size: 12px
+			top: -20px
+
+.lines-ic
+	&::before, &::after
+		content: ''
+		display: inline-block
+		width: 30vw //574px
+		height: 53vh //574px
+		position: absolute
+		pointer-events: none
+		background:
+			//color: cadetblue
+			image: url("../images/icons/lines.svg")
+			size: cover
+			repeat: no-repeat
+			position: center
+		z-index: 1
+		+phone-down
+			display: none
+	&::after
+		background-image: url("../images/icons/lines_right.svg")
+	//&::before
+		top: -45%
+		left: -10%
+	//&::after
+		bottom: -10%
+		right: -10%
+
+	&--banner::before
+		left: -8.33vw
+		top: -1.39vh
+	&--banner::after
+		top: 63vh
+		right: 0
+
+	&--principle
+		&::before
+			display: none
+			left: 0
+			top: -7.87vh //-85px
+
+		&::after
+			right: 4.167vw //80px
+			top: 357vh
+
+	&--about::before
+		left: 0
+		top: 100vh
+
+	&--about::after
+		right: 0
+		top: 157vh
+
+.laurel-right-ic
+	&::after
+		pointer-events: none
+		content: ""
+		position: absolute
+		bottom: -30px
+		right: -20px
+		width: 75px
+		height: 145px
+		display: inline-block
+		background:
+			color: transparent
+			image: url("../images/icons/laurel-right.svg")
+			repeat: no-repeat
+			size: contain
+			position: center
+		z-index: 1
+	&--banner::after
+		bottom: unset
+		top: 92vh
+		right: 0
+		width: 9.375vw
+		height: 24.29vw
+		+phone-down
+			top: 87vh
+			right: 0
+			width: 70px
+			height: 152px
+
+
+//ul.breadcrumb
+	font-family: $ffAvenirNextCyr
+	list-style: none
+	li
+		display: inline-block
+		font-family: $ffAvenirNextCyrBold
+		font-size: 0.83vw //16px
+		line-height: 1.25
+		color: $fontColorMain
+		+ipad-down
+			font-size: .8rem
+
+		&+li::before
+			content: "/\00a0"
+
+		a
+			font-family: $ffAvenirNextCyr
+			color: $fontColorMain
+
+//.about, .calculate, .principle, .schema, .types, .background-wrapper, .info, .build, .contacts-block
+	display: none
+
+$play_ic_w: 1.04167vw
+.play-ic
+	width: $play_ic_w //20px
+	height: $play_ic_w //20px
+	//display: inline-flex
+	//justify-content: center
+	//align-items: center
+	z-index: 1
+	stroke: $fontColorMain
+	stroke-width: 2
+	fill: none
+	display: block
+	//margin-top: -1.574vh //-17px
+	svg
+		display: inherit
+
+.phoneTransp-ic
+	width: 1.14583vw //22px
+	height: 1.14583vw //22px
+	//display: inline-flex
+	//justify-content: center
+	//align-items: center
+	display: inline-block
+	vertical-align: middle
+	z-index: 1
+	fill: none
+	stroke: $accent
+	+phone-down
+		width: 22px
+		height: 22px
+	&>svg
+		display: inherit
+
+$tooltip_w: 11.8125vw
+$tooltip_w_mob: 35vw
+.tooltip
+	display: inline-block
+	width: $tooltip_w
+	padding: 10px
+	background: $dark
+	border-radius: 10px
+	color: #ffffff
+	position: absolute
+	top: -35px
+	left: 50%
+	margin-left: calc(#{$tooltip_w}/(-2))
+	+phone-down
+		width: $tooltip_w_mob
+		font-size: 10px
+		margin-left: calc(#{$tooltip_w_mob}/(-2))
+
+.svg-grad
+	position: absolute
+	bottom: 0
+

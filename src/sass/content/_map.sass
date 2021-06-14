@@ -1,0 +1,201 @@
+$map_h: 52em
+$map_w: 98.3vw
+$map_w_ipad: 97vw
+$map_w_mob: 96vw
+.contacts-block
+  min-height: $map_h //87vh
+  width: $map_w
+  position: relative
+  z-index: 0
+  +ipad-down
+    width: $map_w_ipad
+  +phone-down
+    width: $map_w_mob
+  //background: rgba(32, 31, 36, .9)
+  &.laurel-right-ic::after
+    display: none
+    +phone-down
+      display: block
+      top: 13.5%
+      left: 0
+      width: 63px
+      height: 144px
+      transform: scaleX(-1)
+      opacity: 1
+      background-image: url("../images/icons/laurel-right.svg")
+
+
+  #map
+    min-height: $map_h //87vh
+    //min-height: 48.9583vw //940px
+    width: $map_w
+    +ipad-down
+      width: $map_w_ipad
+    +phone-down
+      min-height: 470px
+      width: $map_w_mob
+
+  +phone-down
+    min-height: 100vh
+
+  .wrapper
+    z-index: 0
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    width: 98.8vw
+    pointer-events: none
+    background: radial-gradient(35% 50% at 33% 43%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 95%)
+    +large-down
+      width: 98.5vw
+    +large-down
+      width: 98.3vw
+    +ipad-down
+      width: 97.8vw
+    +tablet-down
+      width: 97vw
+    +phone-down
+      //background: radial-gradient(35% 35% at 50% 30%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 95%)
+      background: radial-gradient(40% 45% at 55% 25%, rgba(32, 31, 36, 0) 0%, rgba(32, 31, 36, 1) 95%)
+      width: 99vw
+
+  .map-in
+    position: relative
+    padding-top: 5.2083vw //9.26vh //100px
+    +phone-down
+      padding-top: 6.26vh
+
+  .title--shadow span.accent::before
+    +ipad-down
+      text-shadow: -0.52vw -3.5625vw 0px rgba(187,161,130, 0.1)
+  .title--shadow span.second::before
+    +ipad-down
+      left: 10%
+
+  .content
+    position: relative
+    display: block
+    //display: flex
+    //justify-content: flex-end
+    //align-items: center
+    //height: 100%
+    padding-right: 1.875vw //36px
+
+    //display: grid !important
+    //align-items: center
+    //grid-template-columns: repeat(2, 1fr)
+    //justify-items: end
+
+    margin-left: 51%
+    +phone-down
+      margin-left: 0
+
+    &::before
+      content: ''
+      display: inline-block
+      width: 26.0416vw //500px
+      height: 26.0416vw //500px
+      border-radius: 50%
+      background: radial-gradient(50% 50% at 50% 50%, #BBA182 0%, rgba(187, 161, 130, 0) 100%)
+      opacity: 0.1
+      position: absolute
+      left: 4vw
+      //top: calc(50% - 250px)
+      top: calc(50% - 23.148vh)
+      +phone-down
+        width: 100%
+        height: 100%
+
+      +phone-down
+        width: 100px
+        height: 100px
+
+
+    //+phone-down
+      flex-direction: column
+
+  .text-wrapper
+    pointer-events: all
+    padding-top: 5.2083vw //9.26vh //100px
+    font-family: $ffAvenirNextCyr
+    //grid-column: span 2
+    +phone-down
+      padding-top: 34.26vh
+      text-align: center
+      margin-bottom: 55px
+    h5
+      font-size: 1.875vw //36px
+      line-height: 1.225
+      padding-right: 30%
+      margin-bottom: 2.78vh //30px
+      font-weight: 700
+      +ipad-down
+        font-size: 1.8rem
+      +phone-down
+        font-size: 20px
+        padding: 0 60px
+        margin-bottom: 35px
+      &:first-child
+        margin-bottom: 3.385416vw //6.018vh //65px
+        padding-right: 50%
+        +phone-down
+          padding: 0 54px
+          margin-bottom: 3.1vh
+
+    .contact
+      font-size: 1.25vw //24px
+      line-height: 1.795
+      display: block
+      font-weight: 400
+      +ipad-down
+        font-size: 1.2rem
+      +phone-down
+        font-size: 14px
+        line-height: 1.25
+
+    .btn
+      //padding: 24px 70px
+      //padding: 2.22vh 3.65vw
+      padding: 1.25vw 3.65vw
+      margin-bottom: 3.7vh //40px
+      +phone-down
+        width: 90%
+        padding: 20px 3.65vw
+        margin-bottom: 0
+
+  .contact-wrapper
+    padding-left: 1.146vw //22px
+    margin-bottom: 1.97916vw //3.52vh //38px
+    +phone-down
+      margin-bottom: 2.52vh
+
+  .phone--big
+    display: none
+    +phone-down
+      display: block
+      line-height: 1.47
+      font-size: 36px
+      color: $accent
+      font-family: $ffNeumann
+      font-weight: 400
+      width: 100%
+      text-align: center
+      padding-bottom: 45px
+
+  .section-index-wrapper
+    right: -1.6vw
+    top: calc(50% + -4.5vh)
+
+
+//.ymaps-2-1-78-map
+  filter: brightness(90%)
+  -webkit-filter: brightness(90%)
+  -moz-filter: brightness(90%)
+  -o-filter: brightness(90%)
+
+.ymaps-2-1-78-map
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale")
+  -webkit-filter: grayscale(100%)
+  filter: grayscale(100%)

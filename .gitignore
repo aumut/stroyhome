@@ -1,4 +1,13 @@
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
+node_modules
+dist
+.idea/
+*.iml
+out
+build
+gradle
+package-lock.json
+.gradle
+*.env
+*.xml
+.DS_Store
+

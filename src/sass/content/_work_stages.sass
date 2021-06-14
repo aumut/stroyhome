@@ -1,0 +1,332 @@
+$slideWidth: 12vw //230px
+$slidesInView: 4
+$slidesCount: 6
+$controlsWidth: 6vw //116px
+$marginLeft: 1.93vw //37px
+
+.work_stages
+  margin-bottom: 8.79629vh //8.33vh
+  +phone-down
+    margin-bottom: 52px //6.26vh
+  .work_stages-in
+    padding-top: 10.94vh
+    +phone-down
+      padding-top: 50px //6.94vh
+
+  .content
+    display: flex
+    justify-content: space-between
+    +phone-down
+      flex-direction: column
+
+  .title--shadow span::before
+    text-shadow: -1.4vw -4.125vw 0px rgba(255,255,255, 0.1) //-2.4vw -5.125vw  / -1.4vw ​-4.125vw
+
+  .title--shadow span.second::before
+    left: 62%
+    +ipad-down
+      left: 5%
+    +phone-down
+      left: 62%
+
+  .title--shadow span.accent::before
+    +phone-down
+      text-shadow: -12.48vw -4.04vw 0px rgba(187,161,130, 0.1) //17.48vw
+
+  .title
+    margin-bottom: 5px
+    +phone-down
+      margin-bottom: 1px
+
+  .subtitle
+    font-size: 1.1458vw
+    line-height: 1.225
+    padding: 0 7px
+    margin-bottom: 5.648vh //5.648vh
+    +ipad-down
+      font-size: 1.1rem
+    +phone-down
+      font-size: 14px
+      padding: 0
+      margin-bottom: 40px
+
+  .slider-container
+    width: calc(#{$slidesInView} * #{$slideWidth} + #{$controlsWidth} + #{$marginLeft}) //55.89vw
+    overflow: hidden
+    display: flex
+    background-color: $block-bg
+    border-radius: 20px
+    max-height: 37.03vh //400px
+    +phone-down
+      width: 100%
+      flex-direction: column
+      border-radius: 10px
+      margin-bottom: 40px
+      max-height: unset
+
+  .slider
+    width: calc(#{$slidesInView} * #{$slideWidth} + #{$marginLeft})
+    //padding: 63px 0 58px
+    padding: 5.83vh 0 5.37vh
+    +phone-down
+      width: 100%
+      padding: 40px 0 0
+
+    &-controls
+      background-color: $accent
+      width: #{$controlsWidth}
+      position: relative
+      +phone-down
+        width: 100%
+        height: 70px
+        display: flex
+        flex-direction: row-reverse
+      .btn-control
+        display: inline-flex
+        width: 100%
+        height: 50%
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        opacity: .3
+        +phone-down
+          width: 49%
+          height: 100%
+        background:
+          image: url("../images/icons/arrow-right.svg")
+          position: center
+          repeat: no-repeat
+          size: 18px 18px
+        &.btn--prev
+          transform: rotate(180deg)
+          z-index: 2
+
+        &:hover
+          opacity: 1
+          //cursor: pointer
+
+    &-items
+      display: flex
+      justify-content: center
+      align-items: stretch
+      flex-wrap: nowrap
+      width: calc(#{$slidesCount} * #{$slideWidth})
+      padding-left: 0.78125vw //15px
+      position: relative
+      border-top: 4px solid $bg-dark
+      right: 0
+      transition:
+        property: right
+        timing-function: ease-in-out
+        duration: 500ms
+      +phone-down
+        width: calc(#{$slidesCount} * 175px)
+        padding-left: 2px
+        margin-bottom: 38px
+
+    &-item
+      width: #{$slideWidth}
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      flex-direction: column
+      padding-top: 7.5vh //81px
+      +phone-down
+        width: 175px
+        padding-top: 62px
+
+      position: relative
+      &::before
+        content: attr(data-num)
+        display: inline-flex
+        width: 30px //1.5625vw
+        height: 30px //1.5625vw
+        border-radius: 50%
+        background-color: $bg-dark
+        justify-content: center
+        align-items: center
+        position: absolute
+        top: -15px //-0.78125vw
+        color: $greey
+        font-family: $ffAvenirNextCyrBold
+        +phone-down
+          font-size: 18px
+          left: 41%
+          top: -17px
+
+      &[data-num="2"]
+        padding-left: 0.677vw //13px
+
+      &[data-num="3"]
+        padding-left: 2.1458vw //22px
+
+      &[data-num="4"]
+        padding-left: 1.1458vw //22px
+        &::before
+          left: 57%
+        .slider-title
+          padding-left: 80px
+
+      //&:nth-child(2n)
+        background-color: lightcoral
+      //&:nth-child(2n + 1)
+        background-color: lightblue
+
+      .slider-title
+        padding: 0 1.823vw //0 35px
+        text-align: center
+        font-family: $ffAvenirNextCyrBold
+        font-weight: bold
+        font-size: 0.9375vw //18px
+        +ipad-down
+          font-size: 0.9rem
+        +phone-down
+          font-size: 14px
+          font-family: $ffAvenirNextCyr
+          font-weight: normal
+          padding: 0 30px
+
+    &-img
+      width: 6.77vw //130px
+      height: 6.77vw //130px
+      margin-bottom: 20px
+      +phone-down
+        width: 100px
+        height: 100px
+        margin-bottom: 12px
+      img
+        width: 100%
+        height: 100%
+
+
+  .form-wrapper
+    width: 20.8vw
+    text-align: center
+    z-index: 5
+    +phone-down
+      width: 100%
+
+    .modal__title
+      margin-bottom: 0
+      position: relative
+      a
+        color: #ffffff
+        margin-bottom: 1.95vh
+        +phone-down
+          font-size: 30px
+          margin-bottom: 20px
+
+
+      //.contact-phone-btn
+        position: absolute
+        left: -17px
+        top: 14px
+        +phone-down
+          display: none
+
+    .modal__subtitle
+      display: inline-block
+      +phone-down
+        margin-bottom: 10px
+
+    .secd
+      display: inline-block
+      width: 100%
+      text-align: center
+      margin-bottom: 7px
+      +phone-down
+        margin-bottom: 0
+      & + span
+        display: inline-block
+        margin-bottom: 1.99vh //24px
+        width: 100%
+        +phone-down
+          font-size: 14px
+          margin-bottom: 47px
+
+    .form-field
+      background: #ffffff
+
+    .form-row--submit
+      +phone-down
+        margin-bottom: 10px
+        margin-top: -3px
+
+    .form-check
+      +phone-down
+        text-align: left
+        padding-left: 40px
+
+    .btn
+      width: 100%
+
+  .section-index-wrapper
+    right: -0.5vw
+    top: calc(50% + 1.08vh)
+
+.background-wrapper
+  position: relative
+  background:
+    //color: rgba(32, 31, 36, 1)
+    image: url("../images/content/etaps_bg.jpg")
+    repeat: no-repeat
+    size: cover
+    position: center
+  +phone-down
+    background-image: none
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(7, 7, 9, 0.9)
+
+  &.laurel-right-ic::after
+    top: 0
+    right: 0
+    width: 9.114583vw //175px
+    height: 25.46vh //275px
+    background-image: url("../images/icons/laurel-right_1.png")
+    opacity: 0.1
+    +phone-down
+      top: 49.5%
+      right: 0
+      width: 63px
+      height: 144px
+      opacity: 1
+      background-image: url("../images/icons/laurel-right.svg")
+
+
+
+  //&.laurel-right-ic::after
+    bottom: unset
+    top: -170px
+    width: 328px
+    height: 457px
+    right: -73px
+
+.background-outer-wrapper
+  //background-color: red
+  height: calc(2010px + 60px)
+  overflow: hidden
+  position: relative
+  &.laurel-right-ic::after
+    transform: rotate(-38deg)
+    top: -4.16vh //-45px
+    right: -6.25vw //-120px
+    width: 17.03125vw //327px
+    height: 39.4vh //426px
+    +phone-down
+      transform: rotate(-5deg)
+      top: 44%
+      right: -22px
+      width: 109px
+      height: 152px
+
+  &.lines-ic::before
+    bottom: 23.61vh //255px
+    left: 1.5625vw //30px
+    +phone-down
+      display: none

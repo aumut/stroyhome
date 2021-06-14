@@ -1,0 +1,75 @@
+.title--shadow
+  font-size: 3.125vw //calc(60em/18)
+  line-height: 1.47
+  color: transparent
+  +ipad-down
+    font-size: 3rem //calc(38em/12)
+  +phone-down
+    font-size: 28px //calc(28em/12)
+  span
+    display: inline-block
+    position: relative
+    color: #ffffff
+    text-transform: uppercase
+    &.accent
+      color: $accent
+    &.dark
+      color: $dark
+    &::before
+      content: attr(data-text)
+      text-transform: uppercase
+      //text-shadow: -20px -60px 0px rgba(255,255,255, 0.1)
+      text-shadow: -1.4vw -3.125vw 0px rgba(255,255,255, 0.1)
+      color: transparent
+      font-size: 5.2vw //calc(100em/60)
+      position: absolute
+      display: inline-block
+      white-space: nowrap
+      //min-width: 600px
+      +ipad-down
+        font-size: 5rem //2.34375vw //calc(45em/38)
+        //text-shadow: -10px -30px 0px rgba(255,255,255, 0.1)
+        text-shadow: -1.52vw -3.5625vw 0px rgba(255,255,255, 0.1)
+      +tablet-down
+        font-size: 3rem
+      +phone-down
+        font-size: 35px //calc(35em/28)
+        //text-shadow: -10px -20px 0px rgba(255,255,255, 0.1)
+        text-shadow: -2.52vw -5.04vw 0px rgba(255, 255, 255, 0.1)
+    &.second::before
+      left: 94%
+      +ipad-down
+        left: 40%
+      +phone-down
+        left: 36%
+    &.accent::before
+      //text-shadow: -20px -60px 0px rgba(187,161,130, 0.1)
+      text-shadow: -1.4vw -3.125vw 0px rgba(187,161,130, 0.1)
+      +ipad-down
+        //text-shadow: -10px -30px 0px rgba(187,161,130, 0.1)
+        text-shadow: -4.52vw -3.5625vw 0px rgba(187,161,130, 0.1)
+      +phone-down
+        //text-shadow: -10px -20px 0px rgba(187,161,130, 0.1)
+        text-shadow: -2.52vw -5.04vw 0px rgba(187,161,130, 0.1)
+    &.dark::before
+      //text-shadow: -20px -60px 0px rgba(26,24,33, 0.1)
+      text-shadow: -1.04vw -3.125vw 0px rgba(26,24,33, 0.1)
+      +ipad-down
+        //text-shadow: -10px -30px 0px rgba(26,24,33, 0.1)
+        text-shadow: -1.52vw -3.5625vw 0px rgba(26,24,33, 0.1)
+      +phone-down
+        //text-shadow: -10px -20px 0px rgba(26,24,33, 0.1)
+        text-shadow: -2.52vw -5.04vw 0px rgba(26,24,33, 0.1)
+
+  &.title--long
+    span
+      &.second::before
+        left: 80%
+        +ipad-down
+          left: 20%
+        +phone-down
+          //left: -50px
+          left: 0
+      &.accent::before
+        +phone-down
+          text-shadow: -195px 26px 0px rgba(187,161,130, 0.1)

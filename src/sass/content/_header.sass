@@ -1,0 +1,368 @@
+.logo
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 1.35vw //26px
+  font-family: $ffAvenirNextCyrBold
+  color: $fontColorMain
+  text-transform: uppercase
+  width: 17.447916vw
+  +ipad-down
+    font-size: 1.3rem //13px
+    width: 18rem
+  +phone-down
+    font-size: 2rem //18px
+    width: 122px
+
+  img
+    width: 100%
+    height: auto
+
+  span
+    color: $accent
+
+  &-text
+    font-size: 0.73vw //14px
+    line-height: 1.2
+    display: inline-flex
+    +ipad-down
+      font-size: 0.7rem //7px
+
+.nav
+  ul
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    list-style: none
+    +laptop-down
+      display: none
+    a
+      color: $fontColorMain
+      display: inline-block
+
+.header
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+
+  &--static
+    position: static
+
+  &--sm
+    .header-left
+      +phone-down
+        margin-bottom: 0
+    .contact
+      +phone-down
+        display: none
+
+
+  &-in
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 2.78vh 0 // 30
+
+    //+large-down
+      padding-top: calc(50em/18)
+    +phone-down
+      flex-direction: column
+      align-items: stretch
+      padding: 31px 0 40px //calc(26em/12) 0 calc(40em/12)
+      //padding: 2.6vh 0 4vh
+  .nav
+    margin-left: 3.125vw
+    flex-grow: 1
+    a
+      padding: 1.85vh 0.729vw 1.85vh 0  //20 20 20 0
+
+
+  .logo-text
+    display: inline-block
+    margin-left: 1.04vw //20px
+    +phone-down
+      display: none
+
+  &-left
+    width: 21.87vw
+    display: inline-flex
+    //+large-down
+      width: 33vw
+    //+laptop-down
+      width: 38.6vw
+    +ipad-down
+      width: 23rem //46.7vw
+    +phone-down
+      width: unset
+      margin-bottom: 70px
+
+  &-right
+    width: 23.4375vw //500
+    display: inline-flex
+    justify-content: flex-start
+    align-items: center
+    +ipad-down
+      width: unset
+    //large-down
+      width: unset
+    +phone-down
+      align-self: center
+      width: unset
+    .pulse.pulse--md
+      position: absolute
+      left: -3.54166vw //-68px
+      +phone-down
+        left: -70px
+        top: -40px
+
+  .btn-menu
+    position: absolute
+    right: 0.81vw
+    margin-left: 1.04vw //20
+    opacity: 1
+    transition: all .5s ease-out
+    z-index: 2006
+    //+laptop-down
+      right: calc(45em/15)
+    +phone-down
+      position: fixed
+      right: $pd_cont
+      top: $pd_cont
+  .btn-menu.fixed
+    position: fixed
+    top: 2.77vh
+    z-index: 2006
+    opacity: 1
+    +phone-down
+      right: $pd_cont
+      top: $pd_cont
+
+
+
+  .contact-phone-btn
+
+    margin-left: -1.47vw //26
+    +phone-down
+      margin-left: -40px
+      margin-right: -5px
+
+  .contact__text
+    margin-left: calc(-2.45vw/2)
+    +phone-down
+      margin-left: calc(-50px/2)
+
+  .whatsapp
+    margin-right: 3.64vw //70
+    padding-left: 2.86vw //55 103
+    +phone-down
+      display: none
+
+.section-index-wrapper
+  //display: none
+
+.btn-menu
+  display: inline-flex
+  justify-content: center
+  align-items: baseline
+  min-width: 3.13vw //60
+  min-height: 3.13vw //60
+  width: 3.13vw //60
+  height: 3.13vw //60
+  padding: 0.88vw 0.88vw //17 17
+  border-radius: 50%
+  background-color: $fontColorMain
+  fill: $accent
+  cursor: pointer
+  +phone-down
+    min-width: 44px //calc(44em/12)
+    min-height: 44px
+    width: 44px
+    height: 44px
+    padding: 8px
+  &__burger
+    display: inline-block
+    width: 1.35vw //26
+    height: 0.2vw
+    background-color: $accent
+    border-radius: 3px
+    transition: all .5s ease-in-out
+    top: 0.2vw
+    position: relative
+    +phone-down
+      width: 26px
+      height: 4px
+      top: 4px
+
+    &::before, &::after
+      display: inline-block
+      content: ""
+      position: absolute
+      width: 1.35vw //26
+      height: 0.2vw
+      background-color: $accent
+      border-radius: 0.15vw
+      transition: all .5s ease-in-out
+      +phone-down
+        width: 26px
+        height: 4px
+        border-radius: 3px
+    &::before
+      transform: translateY(0.36vw) //7
+      right: 0
+      width: 0.94vw //18
+      +phone-down
+        transform: translateY(7px)
+        width: 18px
+    &::after
+      transform: translateY(0.73vw) //14
+      +phone-down
+        transform: translateY(14px)
+
+  &.open
+    .btn-menu__burger
+      transform: translateX(0.1vw) translatey(0.42vw) //2 8
+      +phone-down
+        transform: translateX(2px) translatey(8px)
+
+
+    .btn-menu__burger::before
+      transform: rotate(135deg) translate(0.46875vw, 0.729vw) //9 14
+      //rotate(135deg) translate(4.5px, 6px)
+      width: 0.625vw //12
+      +phone-down
+        transform: rotate(135deg) translate(9px, 14px) //9 14
+        width: 12px
+    .btn-menu__burger::after
+      width: 0.625vw //12
+      transform: rotate(-135deg) translate(0px, -0.208vw) //-4
+      +phone-down
+        width: 12px //12
+        transform: rotate(-135deg) translate(0px, -4px) //-4
+
+  //.menu-ic
+    transition: all .5s ease-in-out
+    transform: rotate(45deg) translate(0px, -12px)
+    opacity: 0
+  //.menu-ic.open
+    transform: rotate(0deg)
+    opacity: 1
+
+
+  .arrow-ic
+    display: none
+    //transition: .5s ease-in-out
+
+
+.whatsapp
+  display: inline-flex
+  align-items: center
+  font-size: 0.89vw //17
+  line-height: 1.4
+  color: $fontColorMain
+  padding-left: 2.86vw
+  +ipad-down
+    font-size: 0.85rem //8.5px
+  &-ic
+    display: inline-block
+    width: 1.66vw //32
+    height: 1.66vw //32
+    margin-right: 0.78vw
+  .svg-sym
+    fill: $accent
+
+.menu-main-wrap
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0, 0, 0, 0.9)
+  padding-top: 12.5vh
+  opacity: 0
+  z-index: -5
+  transition: all .5s ease-out
+  .title
+    margin-bottom: 4.62vh
+  .container
+    max-width: 100vw
+    transition: all .8s ease-out
+  &.active
+    z-index: 2005
+    opacity: 1
+    .container
+      max-width: 85.9vw
+
+.menu-main
+  list-style: none
+  & li
+    margin-bottom: 2.78vh
+    margin-left: 1.56vw //30
+    &:last-child
+      margin-bottom: 0
+    a
+      color: $fontColorMain
+      font-size: 1.25vw //24
+      line-height: 1.2
+      display: inline-flex
+      align-items: center
+      +ipad-down
+        font-size: 1.2rem
+      +phone-down
+        font-size: 18px
+      &::before
+        content: ""
+        display: inline-block
+        width: 0.42vw //8
+        height: 0.42vw //8
+        border-radius: 50%
+        background-color: $accent
+        box-shadow: 0px 0px 1.04vw $accent // 20
+        margin-right: -0.42vw //8
+        opacity: 0
+        transition: all .5s ease-out
+  li
+    &:hover
+      a
+        &::before
+          opacity: 1
+          margin-right: 1.04vw //20
+
+.contact-phone-btn
+  display: inline-flex
+  width: 1.35vw //26
+  height: 1.35vw //26
+  min-width: 1.35vw //26
+  min-height: 1.35vw //26
+  +phone-down
+    width: 47px //47
+    height: 47px //47
+    min-width: 47px //47
+    min-height: 47px //47
+
+.contact-phone-ic
+  //margin-right: 0.52vw //10
+  width: 100%
+  height: 100%
+  display: inline-block
+  background:
+    color: transparent
+    image: url("../images/icons/phone-transp.svg")
+    repeat: no-repeat
+    size: contain
+    position: center
+  +phone-down
+    background-size: 50%
+
+.contact-email-ic
+  display: inline-block
+  width: 1.2vw //23
+  height: 1.2vw //16
+  min-width: 1.2vw //23
+  min-height: 1.2vw //16
+  background:
+    color: transparent
+    image: url("../images/icons/mail.svg")
+    repeat: no-repeat
+    size: contain
+    position: center

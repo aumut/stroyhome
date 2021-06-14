@@ -1,0 +1,276 @@
+.principle
+  position: relative
+  overflow: hidden
+  background:
+    image: url("../images/content/jan-jakub.jpg")
+    repeat: no-repeat
+    size: cover
+    position: center
+  +phone-down
+    background-image: none
+    overflow: hidden
+
+  //&::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #000000 50%, rgba(196, 196, 196, 0) 100%)
+  h2.title
+    margin-bottom: 16.67vh //180px
+    +phone-down
+      margin-bottom: 20px
+
+  .lines-ic--principle::before
+    display: inline-block
+    left: 0
+    top: -7.87vh //-85px
+    +phone-down
+      display: none
+
+  .title--shadow
+    span
+      &::before
+        text-shadow: -1.7vw -4.5vw 0px rgba(255,255,255, 0.1)
+        +phone-down
+          text-shadow: -5.4vw -5.125vw 0px rgba(255,255,255, 0.1)
+      &.accent::before
+        text-shadow: -1.7vw -4.5vw 0px rgba(187,161,130, 0.1) //-1.7vw -4.5vw
+        +phone-down
+          text-shadow: -5.4vw -5.125vw 0px rgba(187,161,130, 0.1)
+      &.second::before
+        left: 40%
+        +ipad-down
+          left: 5%
+        +phone-down
+          left: 20%
+
+
+  &-in
+    padding-top: 7.592vh
+    padding-bottom: 5.56vh //60px
+    +phone-down
+      padding-bottom: 55px
+      padding-top: 50px
+
+  &-item
+   // background: red
+
+  .principles
+    display: grid
+    grid-template-columns: 1fr minmax(27.39vw, auto) 1fr
+    grid-gap: 1vw 1.979vw //15px 38px
+    grid-auto-rows: minmax(5.2vw, auto) //245
+    grid-template-rows: 1fr 1fr .5fr
+    +phone-down
+      //grid-template-columns: 1fr
+      //grid-template-rows: repeat(5, 0.7fr)
+      //grid-template-rows: repeat(2, 0.7fr) 1fr repeat(2, 0.7fr)
+      //grid-gap: 0.26vw //5px
+
+      display: flex
+      flex-direction: column
+
+
+  .principle-item
+    &:first-child
+      +phone-down
+        order: 1
+
+    &:nth-child(2)
+      grid-row: 1 / 4
+      //background: blue
+      grid-column: 2
+      +phone-down
+        order: 3
+
+    &:nth-child(3)
+      +phone-down
+        order: 4
+    &:nth-child(4)
+      grid-row: 2/4
+      +phone-down
+        order: 2
+
+    &:last-child
+      grid-row: 2/4
+      +phone-down
+        order: 5
+
+
+
+  .btn-wrap
+    text-align: center
+    margin-top: 1.85vh //20px
+    position: relative
+    z-index: 2
+    +phone-down
+      margin-top: 34px
+
+
+    .btn
+      padding: 1.25vw 3.646vw //70px
+      +phone-down
+        font-size: 12px
+        padding: 20px 94px
+
+
+  .section-index-wrapper
+    right: -0.3125vw
+    top: calc(50% - 8.8vh)
+
+.principle-item
+  padding: 5.55vh 0 2.31vh 3.02vw //60px 0 25px 58px
+  position: relative
+  +phone-down
+    padding: 10px 40px 0 31px
+    margin-bottom: 5px
+
+  &__title
+    font-family: $ffAvenirNextCyrBold
+    font-size: 1.354vw //26px
+    line-height: 2
+    margin-bottom: 1.11vh //12px
+    +ipad-down
+      font-size: 1.3rem
+    +phone-down
+      font-size: 16px
+      line-height: 1.25
+      margin-bottom: 10px
+
+  &__descr
+    font-size: 1.041vw //20px
+    line-height: 1.2
+    +ipad-down
+      font-size: 1rem
+    +phone-down
+      font-size: 12px
+      line-height: 1.25
+
+
+  &::before
+    content: attr(data-num)
+    position: absolute
+    left: 0.26vh //5px
+    top: -2.038vh //-22px
+    font-family: $ffNeumann
+    font-size: 5.208vw //100px
+    line-height: 1.47
+    text-transform: uppercase
+    color: $accent
+    opacity: 0.1
+    +ipad-down
+      font-size: 5rem
+    +phone-down
+      font-size: 100px
+      line-height: 1.47
+      left: -42px
+      top: -18px
+
+  &--cntr
+    //background-color: green
+    padding: 0
+    text-align: center
+    +phone-down
+      justify-content: center
+      align-items: center
+      padding: 36px 0 10px
+
+    .principle-item__title
+      margin-bottom: 0
+      line-height: 1
+      +phone-down
+        margin-top: -5px
+
+    .principle-item__img
+      border-radius: 50%
+      background-color: $bg-white
+      width: 27.39vw //526
+      height: 27.39vw //526px
+      display: flex
+      justify-content: center
+      align-items: center
+      margin-bottom: 3.06vh //33px
+      +phone-down
+        display: inline-flex
+        width: 165px
+        height: 165px
+        margin-bottom: 10px
+
+      img
+        width: 100%
+        height: auto
+
+    &::before
+      display: none
+    &.laurel-right-ic::after
+      display: none
+      +phone-down
+        display: inline-block
+
+.mask_rect
+  width: 27.604vw //530
+  height: 21.83vw //225 21.83vw
+  x: 0
+  y: -8
+  +phone-down
+    width: 166.25px!important
+    height: 112px!important
+    y: -4
+
+.mask_circle
+  cx: 13.6979vw  //263
+  cy: 17.6vw //338
+  r: 13.8vw //265
+  +phone-down
+    cx: 82.5px
+    cy: 106.02px
+    r: 81.55px!important
+
+
+.clip_path_rect
+  x: 0
+  y: 17.6vw //338
+  width: 27.6vw //530
+  height: 14.8vw //265
+  +phone-down
+    y: 106.02px
+    width: 166.25px!important
+    height: 83.127px!important
+
+.clip-circle
+  clip-path: circle(13.75vw at center) //circle(264px at center)
+  +phone-down
+    clip-path: circle(83px at center)
+
+.img_toped
+  position: absolute
+  top: 0
+  left: 0
+
+.mask-wrap
+  width: 27.39vw //530
+  height: 35.375vw //680
+  +phone-down
+    width: 166.25px
+    height: 207.03px
+  svg
+    width: 27.39vw
+    height: 35.375vw
+    +phone-down
+      width: 166.25px
+      height: 207.03px
+
+
+.masked_img
+  width: 27.39vw //526px
+  height: 32.375vw //621px
+  x: -10
+  y: -1vw
+  +phone-down
+    width: 165px!important
+    height: 207px!important
+    x: -7
+    y: 0
